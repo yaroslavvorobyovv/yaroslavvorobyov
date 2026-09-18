@@ -12,7 +12,7 @@
         content="Yaroslav Vorobyov — medical student and researcher interested in interventional radiology, vascular disease, and image-guided therapies."
     >
 
-    <link rel="stylesheet" href="style.css?v=20260918-5">
+    <link rel="stylesheet" href="style.css?v=20260918-6">
 </head>
 
 <body>
@@ -41,7 +41,29 @@
             <a href="cv.pdf" target="_blank" class="nav-cv">CV ↗</a>
         </div>
 
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </nav>
+
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+
+    <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+            <a href="cv.pdf" target="_blank" class="mobile-menu-cv">CV ↗</a>
+        </div>
+    </aside>
 
 
     <!-- HERO -->
@@ -652,6 +674,45 @@
 
     </main>
 
+
+
+    <script>
+        (() => {
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.mobile-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            const links = document.querySelectorAll('.mobile-menu a');
+
+            if (!toggle || !menu || !backdrop) return;
+
+            const setOpen = (open) => {
+                document.body.classList.toggle('menu-open', open);
+                toggle.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+                menu.setAttribute('aria-hidden', String(!open));
+                backdrop.setAttribute('aria-hidden', String(!open));
+            };
+
+            toggle.addEventListener('click', () => {
+                setOpen(!document.body.classList.contains('menu-open'));
+            });
+
+            backdrop.addEventListener('click', () => setOpen(false));
+
+            links.forEach(link => {
+                link.addEventListener('click', () => setOpen(false));
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') setOpen(false);
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) setOpen(false);
+            });
+        })();
+    </script>
 
 </body>
 </html>
