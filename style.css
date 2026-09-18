@@ -1300,3 +1300,66 @@ footer a {
     }
 }
 
+/* =========================================
+   CONTINUOUS ABOUT → CONTACT COLOR GRADIENT
+   Pulled from the cool blue/steel palette of the hero image.
+========================================= */
+
+.site-gradient {
+    position: relative;
+    background:
+        linear-gradient(
+            180deg,
+            #0a0b0c 0%,
+            #0b0e12 20%,
+            #0b1116 45%,
+            #0d141a 70%,
+            #09131c 100%
+        );
+}
+
+/* Let the single parent gradient flow uninterrupted behind every section. */
+.site-gradient .section,
+.site-gradient .about-section,
+.site-gradient .selected-work-section,
+.site-gradient .contact-section {
+    background: transparent;
+}
+
+/* Keep the section dividers subtle against the changing background. */
+.site-gradient .section,
+.site-gradient .contact-section {
+    border-top-color: rgba(255,255,255,.09);
+}
+
+/* Contact used to be a light section; adapt it to the dark end of the gradient. */
+.site-gradient .contact-section {
+    color: #f1f1f1;
+}
+
+.site-gradient .contact-label {
+    color: #a7afb7;
+}
+
+.site-gradient .contact-description {
+    color: #98a2ab;
+}
+
+.site-gradient .contact-links a {
+    color: #edf1f4;
+    border-bottom-color: rgba(237,241,244,.42);
+}
+
+.site-gradient .contact-links a:hover {
+    border-bottom-color: rgba(255,255,255,.85);
+}
+
+.site-gradient footer {
+    border-top-color: rgba(255,255,255,.14);
+    color: #77828c;
+}
+
+.site-gradient footer a {
+    color: #aeb6bd;
+}
+
