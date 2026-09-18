@@ -1668,3 +1668,8 @@ footer a {
     white-space: nowrap;
 }
 
+/* Research cards — rounded corners only */
+#research .work-card {
+    border-radius: 16px;
+}
+
