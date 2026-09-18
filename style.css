@@ -1663,3 +1663,8 @@ footer a {
         0 6px 22px rgba(0,0,0,.16) !important;
 }
 
+/* Experiences & Education heading */
+#experience > .section-heading .section-label {
+    white-space: nowrap;
+}
+
