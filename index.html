@@ -12,7 +12,7 @@
         content="Yaroslav Vorobyov — medical student and researcher interested in interventional radiology, vascular disease, and image-guided therapies."
     >
 
-    <link rel="stylesheet" href="style.css?v=20260918-6">
+    <link rel="stylesheet" href="style.css?v=20260918-7">
 </head>
 
 <body>
@@ -711,6 +711,61 @@
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 900) setOpen(false);
             });
+
+            // Active navigation indicator
+            const sectionLinks = document.querySelectorAll(
+                '.nav-links a[href^="#"], .mobile-menu-links a[href^="#"]'
+            );
+            const sections = ['about', 'research', 'experience', 'contact']
+                .map(id => document.getElementById(id))
+                .filter(Boolean);
+
+            const setActiveSection = (id) => {
+                sectionLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === `#${id}`;
+                    link.classList.toggle('is-active', isActive);
+
+                    if (isActive) {
+                        link.setAttribute('aria-current', 'page');
+                    } else {
+                        link.removeAttribute('aria-current');
+                    }
+                });
+            };
+
+            const updateActiveSection = () => {
+                const probe = window.innerHeight * 0.34;
+                let activeId = null;
+
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= probe && rect.bottom > probe) {
+                        activeId = section.id;
+                    }
+                });
+
+                // Make Contact reliably active near the bottom of the page.
+                const nearBottom =
+                    window.innerHeight + window.scrollY >=
+                    document.documentElement.scrollHeight - 40;
+
+                if (nearBottom && document.getElementById('contact')) {
+                    activeId = 'contact';
+                }
+
+                if (activeId) {
+                    setActiveSection(activeId);
+                } else {
+                    sectionLinks.forEach(link => {
+                        link.classList.remove('is-active');
+                        link.removeAttribute('aria-current');
+                    });
+                }
+            };
+
+            updateActiveSection();
+            window.addEventListener('scroll', updateActiveSection, { passive: true });
+            window.addEventListener('resize', updateActiveSection);
         })();
     </script>
 
