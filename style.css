@@ -126,8 +126,8 @@ nav {
 
 
 .nav-links a {
-
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 400;
 
     text-decoration: none;
 
@@ -203,7 +203,7 @@ nav {
     font-size: clamp(38px, 8.4vw, 100px);
     line-height: 0.9;
     letter-spacing: -0.065em;
-    font-weight: 300;
+    font-weight: 400;
     white-space: nowrap;
     margin: 0;
 }
