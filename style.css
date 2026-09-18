@@ -1400,3 +1400,208 @@ footer a {
     letter-spacing: .3px;
 }
 
+/* =========================================
+   FINAL POLISH — FROSTED UI + SECTION LABELS
+========================================= */
+
+/* Shared frosted-glass treatment */
+.brand,
+.explore,
+.section-heading,
+.frosted-section-pill {
+    border: 1px solid rgba(255,255,255,.28);
+    background: rgba(12,16,20,.24);
+    -webkit-backdrop-filter: blur(12px) saturate(125%);
+    backdrop-filter: blur(12px) saturate(125%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 4px 18px rgba(0,0,0,.08);
+}
+
+
+/* Top-left YV logo */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 14px;
+    border-radius: 999px;
+
+    color: #f0f0f0;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.brand:hover {
+    background: rgba(255,255,255,.08);
+    border-color: rgba(255,255,255,.48);
+    transform: translateY(-1px);
+}
+
+
+/* Hero social icons — slightly larger */
+.hero-socials {
+    gap: 19px;
+}
+
+.hero-socials a {
+    width: 25px;
+    height: 25px;
+}
+
+.hero-socials svg {
+    width: 21px;
+    height: 21px;
+}
+
+
+/* Explore button — same frosted language as nav buttons */
+.explore {
+    background: rgba(12,16,20,.24);
+    border-color: rgba(255,255,255,.28);
+
+    -webkit-backdrop-filter: blur(12px) saturate(125%);
+    backdrop-filter: blur(12px) saturate(125%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 4px 18px rgba(0,0,0,.08);
+}
+
+.explore:hover {
+    background: rgba(255,255,255,.08);
+    border-color: rgba(255,255,255,.48);
+}
+
+
+/* 01 ABOUT / 02 SELECTED WORK / 03 EXPERIENCE / 04 CONTACT */
+.section-heading,
+.about-section .section-heading,
+.selected-work-section .section-heading,
+.contact-section .section-heading {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+
+    gap: 12px;
+
+    padding: 10px 16px;
+    border-radius: 999px;
+
+    margin-bottom: 80px;
+}
+
+.section-heading .section-number {
+    color: #7f8890;
+    font-size: 13px;
+}
+
+.section-heading .section-label {
+    color: #c0c5c9;
+    font-size: 13px;
+    letter-spacing: 1.8px;
+}
+
+
+/* Publications / Leadership frosted single-title pills */
+.heading-pill-row {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.frosted-section-pill {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    padding: 10px 16px;
+    border-radius: 999px;
+
+    color: #c0c5c9 !important;
+    font-size: 13px !important;
+    letter-spacing: 1.8px !important;
+}
+
+/* Keep the normal publications divider, but remove it under Leadership & Involvement. */
+.leadership-heading {
+    padding-bottom: 0;
+    border-bottom: 0;
+    margin-bottom: 34px;
+}
+
+
+/* Contact now follows the same section-heading system */
+.contact-section {
+    padding-top: 120px;
+}
+
+.contact-section .contact-section-heading {
+    margin-bottom: 90px;
+}
+
+.contact-section h2 {
+    margin-top: 0;
+}
+
+.contact-description {
+    max-width: none;
+    white-space: nowrap;
+}
+
+
+/* Bottom social icons — match landing-page scale */
+.contact-links {
+    align-items: center;
+    gap: 28px;
+}
+
+.contact-links a:not(.contact-cv) {
+    width: 25px;
+    height: 25px;
+}
+
+.contact-links svg {
+    width: 21px;
+    height: 21px;
+}
+
+.contact-cv {
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+
+/* Mobile safeguards */
+@media (max-width: 800px) {
+
+    .section-heading,
+    .about-section .section-heading,
+    .selected-work-section .section-heading,
+    .contact-section .section-heading {
+        margin-bottom: 62px;
+    }
+
+    .contact-description {
+        white-space: normal;
+    }
+
+    .hero-socials a,
+    .contact-links a:not(.contact-cv) {
+        width: 24px;
+        height: 24px;
+    }
+
+    .hero-socials svg,
+    .contact-links svg {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
