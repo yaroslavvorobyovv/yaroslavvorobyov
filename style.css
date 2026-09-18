@@ -870,7 +870,11 @@ a.pub-entry:hover .pub-arrow { color:#ddd; transform:translate(4px,calc(-50% - 4
 }
 
 .experience-subsection-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-bottom: 22px;
+    margin-bottom: 34px;
     border-bottom: 1px solid rgba(255,255,255,.13);
 }
 
@@ -881,95 +885,147 @@ a.pub-entry:hover .pub-arrow { color:#ddd; transform:translate(4px,calc(-50% - 4
     letter-spacing: 2px;
 }
 
-.leadership-list {
-    margin-left: calc(40% + 5vw);
-    border-top: 1px solid rgba(255,255,255,.08);
+
+/* Leadership cards */
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
 }
 
-.leadership-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
+.leadership-card {
+    min-height: 280px;
+    padding: 24px;
 
-    padding: 30px 0;
-    border-bottom: 1px solid rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.13);
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.025), rgba(255,255,255,.008));
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    overflow: hidden;
 
     transition:
-        padding-left .25s ease,
-        background .25s ease;
+        transform .28s ease,
+        border-color .28s ease,
+        background .28s ease,
+        box-shadow .28s ease;
 }
 
-.leadership-row:hover {
-    padding-left: 12px;
-    background: rgba(255,255,255,.015);
+.leadership-card::before {
+    content: "";
+    position: absolute;
+    left: -20%;
+    top: -55%;
+    width: 85%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(110,139,157,.10), transparent 70%);
+    pointer-events: none;
+    transition: transform .5s ease, opacity .35s ease;
 }
 
-.leadership-main {
-    max-width: 680px;
+.leadership-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,.27);
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.04), rgba(255,255,255,.012));
+    box-shadow: 0 18px 40px rgba(0,0,0,.16);
 }
 
-.leadership-main h3 {
-    margin-bottom: 7px;
+.leadership-card:hover::before {
+    transform: translate(14px, 12px) scale(1.08);
+}
 
-    color: #ededed;
-    font-size: 18px;
-    font-weight: 400;
+.leadership-card-top {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    color: #6f7880;
+    font-size: 9px;
+    letter-spacing: 1.45px;
+}
+
+.leadership-card-top span:last-child {
+    text-align: right;
+}
+
+.leadership-card-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 54px;
+}
+
+.leadership-card-content h3 {
+    margin-bottom: 10px;
+
+    color: #f0f0f0;
+    font-size: clamp(23px, 1.8vw, 31px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -.035em;
 }
 
 .leadership-role {
-    color: #9a9fa4;
+    color: #b4bac0;
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 .leadership-detail {
-    margin-top: 9px;
+    margin-top: 14px;
 
-    color: #6f7780;
+    color: #727b83;
     font-size: 12px;
     line-height: 1.65;
 }
 
-.leadership-date {
-    min-width: 175px;
+.leadership-card-bottom {
+    position: relative;
+    z-index: 1;
+
+    margin-top: auto;
+    padding-top: 26px;
 
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
+    gap: 5px;
 
-    color: #777f86;
-    font-size: 13px;
-    text-align: right;
+    color: #8b939a;
+    font-size: 11px;
 }
 
-.leadership-date small {
+.leadership-card-bottom small {
     color: #596169;
-    font-size: 10px;
-    letter-spacing: .2px;
+    font-size: 9px;
 }
+
+
+/* Professional memberships */
 
 .memberships-section {
     margin-top: 115px;
 }
 
 .membership-grid {
-    margin-top: 36px;
-    margin-left: calc(40% + 5vw);
-
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
 }
 
 .membership-card {
-    min-height: 175px;
-
-    padding: 24px;
+    min-height: 190px;
+    padding: 22px;
 
     border: 1px solid rgba(255,255,255,.12);
-    background: rgba(255,255,255,.015);
+    background: rgba(255,255,255,.012);
 
     display: flex;
     flex-direction: column;
@@ -982,72 +1038,65 @@ a.pub-entry:hover .pub-arrow { color:#ddd; transform:translate(4px,calc(-50% - 4
 
 .membership-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(255,255,255,.27);
-    background: rgba(255,255,255,.03);
+    border-color: rgba(255,255,255,.25);
+    background: rgba(255,255,255,.025);
 }
 
 .membership-acronym {
-    margin-bottom: 36px;
+    margin-bottom: 46px;
 
-    color: #747c83;
+    color: #727b83;
     font-size: 10px;
     letter-spacing: 1.8px;
 }
 
 .membership-card h3 {
-    max-width: 320px;
-    margin-bottom: 11px;
+    max-width: 260px;
+    margin-bottom: 14px;
 
-    color: #ededed;
-    font-size: 17px;
+    color: #e8e8e8;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
 .membership-card p {
     margin-top: auto;
 
-    color: #737b82;
-    font-size: 12px;
+    color: #707980;
+    font-size: 11px;
 }
 
 
-/* EXPERIENCE ADDITIONS — RESPONSIVE */
+/* Responsive */
 
-@media (max-width: 1000px) {
-
-    .leadership-list,
-    .membership-grid {
-        margin-left: 0;
+@media (max-width: 1100px) {
+    .leadership-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .membership-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-@media (max-width: 800px) {
-
+@media (max-width: 700px) {
     .experience-subsection {
         margin-top: 90px;
     }
 
-    .leadership-row {
-        flex-direction: column;
-        gap: 14px;
-    }
-
-    .leadership-date {
-        min-width: 0;
-        align-items: flex-start;
-        text-align: left;
-    }
-
+    .leadership-grid,
     .membership-grid {
         grid-template-columns: 1fr;
     }
 
-    .membership-card {
-        min-height: 155px;
+    .leadership-card {
+        min-height: 245px;
     }
 
+    .membership-card {
+        min-height: 165px;
+    }
 }
 
 /* =========================
