@@ -1833,3 +1833,19 @@ footer a {
     }
 }
 
+/* Professional memberships — tighter vertical spacing */
+#experience .membership-card {
+    min-height: 118px !important;
+    padding: 17px 20px 18px !important;
+}
+
+#experience .membership-acronym {
+    margin-bottom: 20px !important;
+}
+
+@media (max-width: 650px) {
+    #experience .membership-card {
+        min-height: 112px !important;
+    }
+}
+
