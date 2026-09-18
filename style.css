@@ -326,22 +326,16 @@ nav {
 
 
 .section-number {
-
-    color: #555;
-
-    font-size: 11px;
-
+    color: #666;
+    font-size: 15px;
+    font-weight: 400;
 }
 
-
 .section-label {
-
-    color: #888;
-
-    font-size: 11px;
-
+    color: #999;
+    font-size: 15px;
+    font-weight: 400;
     letter-spacing: 2px;
-
 }
 
 
