@@ -1387,3 +1387,16 @@ footer a {
     color: #aeb6bd;
 }
 
+/* Experience activity cards */
+#experience .activity-card {
+    border-radius: 16px;
+}
+
+#experience .activity-card .work-card-body {
+    min-height: 285px;
+}
+
+#experience .activity-card .work-foot {
+    letter-spacing: .3px;
+}
+
