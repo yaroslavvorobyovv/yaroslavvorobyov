@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="Yaroslav Vorobyov — medical student, researcher, and aspiring interventional radiologist."
+        content="Yaroslav Vorobyov — medical student and researcher interested in interventional radiology, vascular disease, and image-guided therapies."
     >
 
     <link rel="stylesheet" href="style.css">
@@ -17,131 +17,463 @@
 
 <body>
 
+    <!-- Optional background video.
+         Later we can upload a video as assets/hero.mp4.
+         If no video exists, the gradient background still works. -->
+
+    <div class="background">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="assets/hero.mp4" type="video/mp4">
+        </video>
+
+        <div class="background-overlay"></div>
+    </div>
+
+
+    <!-- NAVIGATION -->
+
     <nav>
-        <div class="logo">YV</div>
+
+        <a href="#" class="brand">
+            YV
+        </a>
 
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
-            <a href="cv.pdf" target="_blank">CV</a>
+            <a href="cv.pdf" target="_blank" class="nav-cv">CV ↗</a>
         </div>
+
     </nav>
 
 
-    <main>
+    <!-- HERO -->
 
-        <section class="hero">
+    <header class="hero">
 
-            <div class="hero-content">
+        <div class="hero-inner">
 
-                <p class="eyebrow">MEDICAL STUDENT • RESEARCHER</p>
+            <p class="hero-label">
+                MEDICAL STUDENT / RESEARCHER
+            </p>
 
-                <h1>
-                    Yaroslav<br>
-                    Vorobyov
-                </h1>
+            <h1>
+                Yaroslav
+                <span>Vorobyov</span>
+            </h1>
+
+            <div class="hero-bottom">
 
                 <p class="hero-description">
-                    Medical student interested in interventional radiology,
-                    vascular disease, image-guided therapies, and clinical outcomes research.
+                    Exploring image-guided intervention,
+                    vascular disease, and clinical outcomes.
                 </p>
 
                 <a href="#about" class="explore">
-                    Explore ↓
+                    <span>Explore</span>
+                    <span class="arrow">↓</span>
                 </a>
 
             </div>
 
-        </section>
+        </div>
+
+        <div class="hero-side">
+            FORT WORTH, TEXAS
+        </div>
+
+    </header>
 
 
-        <section id="about" class="section">
+    <!-- ABOUT -->
+
+    <section id="about" class="section about-section">
+
+        <div class="section-heading">
 
             <p class="section-number">01</p>
 
-            <h2>About</h2>
-
-            <p class="large-text">
-                I am a medical student at the TCU Burnett School of Medicine
-                with interests in interventional radiology, vascular surgery,
-                and minimally invasive therapies.
+            <p class="section-label">
+                ABOUT
             </p>
 
-        </section>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-title">
+
+                <h2>
+                    Medicine.<br>
+                    Research.<br>
+                    Innovation.
+                </h2>
+
+            </div>
+
+            <div class="about-copy">
+
+                <p class="intro">
+                    I am a medical student at the TCU Burnett School of Medicine
+                    with interests in interventional radiology, vascular surgery,
+                    and minimally invasive therapies.
+                </p>
+
+                <p>
+                    My work spans clinical outcomes research, vascular disease,
+                    image-guided intervention, and medical education. I am
+                    particularly interested in how technology and procedural
+                    innovation can improve patient care.
+                </p>
+
+                <a href="cv.pdf" target="_blank" class="text-link">
+                    View full curriculum vitae ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-        <section id="research" class="section">
+    <!-- RESEARCH -->
+
+    <section id="research" class="section">
+
+        <div class="section-heading">
 
             <p class="section-number">02</p>
 
-            <h2>Selected Research</h2>
+            <p class="section-label">
+                SELECTED RESEARCH
+            </p>
 
-            <div class="projects">
+        </div>
 
-                <div class="project">
-                    <span>01</span>
-                    <h3>Calcified Infrapopliteal Intervention</h3>
-                    <p>
-                        Response-based approaches to endovascular treatment
-                        of chronic limb-threatening ischemia.
-                    </p>
+        <div class="research-header">
+
+            <h2>
+                Current work
+            </h2>
+
+            <p>
+                Selected clinical and translational research projects.
+            </p>
+
+        </div>
+
+
+        <div class="research-list">
+
+            <article class="research-item">
+
+                <div class="research-index">
+                    01
                 </div>
 
-                <div class="project">
-                    <span>02</span>
-                    <h3>Median Arcuate Ligament Syndrome</h3>
+                <div class="research-main">
+
+                    <p class="research-category">
+                        INTERVENTIONAL RADIOLOGY
+                    </p>
+
+                    <h3>
+                        Calcified Infrapopliteal Intervention
+                    </h3>
+
+                </div>
+
+                <div class="research-description">
+
+                    <p>
+                        A response-based framework for endovascular treatment
+                        of calcified infrapopliteal disease in chronic
+                        limb-threatening ischemia.
+                    </p>
+
+                </div>
+
+                <div class="research-arrow">
+                    ↗
+                </div>
+
+            </article>
+
+
+            <article class="research-item">
+
+                <div class="research-index">
+                    02
+                </div>
+
+                <div class="research-main">
+
+                    <p class="research-category">
+                        VASCULAR SURGERY
+                    </p>
+
+                    <h3>
+                        Median Arcuate Ligament Syndrome
+                    </h3>
+
+                </div>
+
+                <div class="research-description">
+
                     <p>
                         Long-term clinical outcomes, symptom recurrence,
-                        and patient selection.
+                        quality of life, and patient selection following
+                        surgical treatment.
                     </p>
+
                 </div>
 
-                <div class="project">
-                    <span>03</span>
-                    <h3>Arthroplasty Outcomes</h3>
+                <div class="research-arrow">
+                    ↗
+                </div>
+
+            </article>
+
+
+            <article class="research-item">
+
+                <div class="research-index">
+                    03
+                </div>
+
+                <div class="research-main">
+
+                    <p class="research-category">
+                        CLINICAL OUTCOMES
+                    </p>
+
+                    <h3>
+                        Arthroplasty Outcomes
+                    </h3>
+
+                </div>
+
+                <div class="research-description">
+
                     <p>
                         Investigation of perioperative factors associated
-                        with post-acute care disposition.
+                        with post-acute care disposition following
+                        hip and knee arthroplasty.
                     </p>
+
                 </div>
 
-            </div>
+                <div class="research-arrow">
+                    ↗
+                </div>
 
-        </section>
+            </article>
 
 
-        <section id="experience" class="section">
+            <article class="research-item">
+
+                <div class="research-index">
+                    04
+                </div>
+
+                <div class="research-main">
+
+                    <p class="research-category">
+                        VASCULAR SURGERY
+                    </p>
+
+                    <h3>
+                        Aortofemoral Bypass Outcomes
+                    </h3>
+
+                </div>
+
+                <div class="research-description">
+
+                    <p>
+                        Evaluation of sex-based differences in perioperative
+                        outcomes, complications, and long-term graft patency.
+                    </p>
+
+                </div>
+
+                <div class="research-arrow">
+                    ↗
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience" class="section">
+
+        <div class="section-heading">
 
             <p class="section-number">03</p>
 
-            <h2>Experience</h2>
-
-            <p class="large-text">
-                Clinical medicine, biomedical research, leadership,
-                service, and medical education.
+            <p class="section-label">
+                EXPERIENCE
             </p>
 
-        </section>
+        </div>
 
 
-        <section id="contact" class="section contact">
+        <div class="experience-grid">
 
-            <p class="section-number">04</p>
+            <div class="experience-intro">
 
-            <h2>Let's connect.</h2>
+                <h2>
+                    Beyond the classroom.
+                </h2>
 
-            <div class="contact-links">
-                <a href="mailto:YOUR_EMAIL_HERE">Email</a>
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="cv.pdf" target="_blank">Curriculum Vitae</a>
             </div>
 
-        </section>
 
-    </main>
+            <div class="experience-list">
+
+                <div class="experience-row">
+
+                    <div>
+                        <h3>
+                            TCU Burnett School of Medicine
+                        </h3>
+
+                        <p>
+                            Doctor of Medicine
+                        </p>
+                    </div>
+
+                    <span>
+                        Fort Worth, TX
+                    </span>
+
+                </div>
+
+
+                <div class="experience-row">
+
+                    <div>
+                        <h3>
+                            Clinical & Translational Research
+                        </h3>
+
+                        <p>
+                            Interventional Radiology / Vascular Surgery
+                        </p>
+                    </div>
+
+                    <span>
+                        Current
+                    </span>
+
+                </div>
+
+
+                <div class="experience-row">
+
+                    <div>
+                        <h3>
+                            Emergency Medical Services
+                        </h3>
+
+                        <p>
+                            Emergency Medical Technician
+                        </p>
+                    </div>
+
+                    <span>
+                        Chicago, IL
+                    </span>
+
+                </div>
+
+
+                <div class="experience-row">
+
+                    <div>
+                        <h3>
+                            Northwestern University
+                        </h3>
+
+                        <p>
+                            Neuroscience & Chemistry
+                        </p>
+                    </div>
+
+                    <span>
+                        Evanston, IL
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact-section">
+
+        <p class="section-number">
+            04
+        </p>
+
+        <p class="contact-label">
+            CONTACT
+        </p>
+
+        <h2>
+            Let's connect.
+        </h2>
+
+        <p class="contact-description">
+            Research collaborations, academic opportunities,
+            and professional connections are always welcome.
+        </p>
+
+
+        <div class="contact-links">
+
+            <a href="mailto:YOUR_EMAIL_HERE">
+                Email ↗
+            </a>
+
+            <a href="YOUR_LINKEDIN_URL" target="_blank">
+                LinkedIn ↗
+            </a>
+
+            <a href="cv.pdf" target="_blank">
+                Curriculum Vitae ↗
+            </a>
+
+        </div>
+
+
+        <footer>
+
+            <p>
+                © 2026 Yaroslav Vorobyov
+            </p>
+
+            <a href="#">
+                Back to top ↑
+            </a>
+
+        </footer>
+
+    </section>
+
 
 </body>
-
 </html>
