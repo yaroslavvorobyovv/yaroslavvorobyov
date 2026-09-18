@@ -551,144 +551,589 @@ nav {
 
 
 /* =========================
-   RESEARCH
+   SELECTED WORK
 ========================= */
 
-.research-header {
+.selected-work-section {
+    background: #0b0b0b;
+}
+
+
+.selected-work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 70px;
+    margin-bottom: 75px;
+}
+
+
+.selected-work-header h2 {
+    font-size: clamp(52px, 6.5vw, 108px);
+    font-weight: 300;
+    line-height: .95;
+    letter-spacing: -.065em;
+}
+
+
+.selected-work-header > p {
+    max-width: 410px;
+    color: #858585;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* FEATURED WORK CARDS */
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+
+.work-card {
+    position: relative;
+    min-height: 510px;
+    overflow: hidden;
+
+    border: 1px solid #292929;
+    background: #101010;
+
+    padding: 27px;
 
     display: flex;
-
+    flex-direction: column;
     justify-content: space-between;
 
-    align-items: flex-end;
-
-    margin-bottom: 80px;
-
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease;
 }
 
 
-.research-header h2 {
-
-    font-size: clamp(
-        55px,
-        8vw,
-        120px
-    );
-
-    font-weight: 300;
-
-    letter-spacing: -.07em;
-
+.work-card:hover {
+    transform: translateY(-5px);
+    border-color: #505050;
+    background: #131313;
 }
 
 
-.research-header p {
+.work-card-top {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 
     color: #777;
-
-    max-width: 320px;
-
-    line-height: 1.6;
-
+    font-size: 10px;
+    letter-spacing: 1.8px;
 }
 
 
-.research-list {
-
-    border-top: 1px solid #292929;
-
+.work-card-content {
+    position: relative;
+    z-index: 2;
+    max-width: 84%;
 }
 
 
-.research-item {
+.work-card-content h3 {
+    max-width: 660px;
+    margin-bottom: 20px;
 
-    display: grid;
+    font-size: clamp(28px, 3vw, 48px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -.045em;
+}
 
-    grid-template-columns:
 
-        60px
-        1.5fr
-        1fr
-        40px;
+.work-card-content > p {
+    max-width: 560px;
 
-    gap: 30px;
+    color: #858585;
+    font-size: 14px;
+    line-height: 1.7;
 
-    padding: 45px 0;
+    margin-bottom: 24px;
+}
 
-    border-bottom: 1px solid #292929;
 
+.work-status,
+.work-link {
+    color: #bdbdbd;
+    font-size: 12px;
+    letter-spacing: .6px;
+}
+
+
+.work-link {
+    display: inline-flex;
     align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+
+    text-decoration: none;
+    padding-bottom: 4px;
+
+    border-bottom: 1px solid #4a4a4a;
+}
+
+
+.work-link span {
+    transition: transform .25s ease;
+}
+
+
+.work-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* ANIMATED VISUALS */
+
+.work-visual {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .44;
 
     transition:
-        padding .25s ease,
-        background .25s ease;
-
+        opacity .35s ease,
+        transform .6s cubic-bezier(.2,.7,.2,1);
 }
 
 
-.research-item:hover {
-
-    padding-left: 18px;
-
+.work-card:hover .work-visual {
+    opacity: .72;
+    transform: scale(1.025);
 }
 
 
-.research-index {
-
-    color: #555;
-
-    font-size: 11px;
-
+.work-visual svg {
+    position: absolute;
+    width: 88%;
+    height: 62%;
+    right: -6%;
+    top: 13%;
 }
 
 
-.research-category {
+/* IR */
 
-    font-size: 9px;
+.work-card-ir .vessel {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
 
+
+.vessel-faint {
+    stroke: rgba(255,255,255,.08);
+    stroke-width: 21;
+}
+
+
+.vessel-main {
+    stroke: rgba(190,210,220,.58);
+    stroke-width: 3;
+    stroke-dasharray: 8 11;
+    animation: vesselFlow 8s linear infinite;
+}
+
+
+.vessel-branch {
+    stroke: rgba(190,210,220,.28);
+    stroke-width: 2;
+}
+
+
+.guidewire-tip {
+    fill: rgba(230,240,245,.85);
+    filter: drop-shadow(0 0 8px rgba(220,235,245,.55));
+    animation: guidewirePulse 2.4s ease-in-out infinite;
+}
+
+
+@keyframes vesselFlow {
+    to { stroke-dashoffset: -150; }
+}
+
+
+@keyframes guidewirePulse {
+    50% { r: 8; opacity: .5; }
+}
+
+
+/* MALS */
+
+.work-card-mals .artery-main,
+.work-card-mals .artery-branch {
+    fill: none;
+    stroke-linecap: round;
+}
+
+
+.work-card-mals .artery-main {
+    stroke: rgba(210,214,220,.5);
+    stroke-width: 5;
+}
+
+
+.work-card-mals .artery-branch {
+    stroke: rgba(210,214,220,.28);
+    stroke-width: 3;
+}
+
+
+.compression-ring {
+    fill: none;
+    stroke: rgba(230,230,230,.55);
+    stroke-width: 2;
+    transform-origin: 300px 142px;
+    animation: compressionPulse 3s ease-in-out infinite;
+}
+
+
+@keyframes compressionPulse {
+    50% {
+        transform: scaleX(.76);
+        opacity: .35;
+    }
+}
+
+
+/* BIOMATERIALS / NMR */
+
+.work-card-bio .fiber {
+    fill: none;
+    stroke: rgba(210,215,224,.26);
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+
+.work-card-bio .fiber-a {
+    stroke-dasharray: 10 10;
+    animation: fiberDrift 10s linear infinite;
+}
+
+
+.work-card-bio .fiber-b {
+    stroke-dasharray: 4 12;
+    animation: fiberDriftReverse 12s linear infinite;
+}
+
+
+.work-card-bio .nmr-line {
+    fill: none;
+    stroke: rgba(230,235,240,.58);
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 650;
+    animation: nmrDraw 5s ease-in-out infinite;
+}
+
+
+@keyframes fiberDrift {
+    to { stroke-dashoffset: -140; }
+}
+
+
+@keyframes fiberDriftReverse {
+    to { stroke-dashoffset: 150; }
+}
+
+
+@keyframes nmrDraw {
+    0%, 10% { stroke-dashoffset: 650; opacity: .2; }
+    45%, 80% { stroke-dashoffset: 0; opacity: .8; }
+    100% { stroke-dashoffset: -160; opacity: .2; }
+}
+
+
+/* CLINICAL OUTCOMES */
+
+.chart-axis,
+.error-line {
+    stroke: rgba(225,225,225,.22);
+    stroke-width: 2;
+}
+
+
+.chart-bar {
+    fill: rgba(205,215,223,.28);
+    transform-box: fill-box;
+    transform-origin: center bottom;
+}
+
+
+.bar-one {
+    animation: barOne 4s ease-in-out infinite alternate;
+}
+
+
+.bar-two {
+    animation: barTwo 4.6s ease-in-out infinite alternate;
+}
+
+
+@keyframes barOne {
+    from { transform: scaleY(.78); }
+    to { transform: scaleY(1); }
+}
+
+
+@keyframes barTwo {
+    from { transform: scaleY(.86); }
+    to { transform: scaleY(1); }
+}
+
+
+/* PUBLICATIONS */
+
+.publications-block {
+    margin-top: 145px;
+}
+
+
+.publications-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding-bottom: 24px;
+    border-bottom: 1px solid #303030;
+}
+
+
+.publications-heading p {
+    font-size: 15px;
     letter-spacing: 2px;
-
-    color: #646464;
-
-    margin-bottom: 12px;
-
+    color: #b0b0b0;
 }
 
 
-.research-main h3 {
+.publications-heading span {
+    color: #666;
+    font-size: 13px;
+}
 
-    font-size: clamp(
-        23px,
-        2.5vw,
-        39px
-    );
 
+.pub-year-group {
+    display: grid;
+    grid-template-columns: 145px minmax(0, 1fr);
+    gap: 40px;
+
+    padding-top: 46px;
+}
+
+
+.pub-year {
+    color: #858585;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.pub-list {
+    border-top: 1px solid #2c2c2c;
+}
+
+
+.pub-entry {
+    position: relative;
+
+    display: block;
+
+    padding: 31px 58px 31px 0;
+
+    border-bottom: 1px solid #2c2c2c;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition:
+        padding-left .28s ease,
+        background .28s ease;
+}
+
+
+a.pub-entry:hover {
+    padding-left: 14px;
+    background: rgba(255,255,255,.018);
+}
+
+
+.pub-meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    margin-bottom: 13px;
+
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 1.6px;
+}
+
+
+.pub-meta span + span::before {
+    content: "•";
+    margin-right: 15px;
+    color: #444;
+}
+
+
+.pub-entry h3 {
+    max-width: 1050px;
+
+    font-size: clamp(21px, 2vw, 31px);
     font-weight: 300;
+    line-height: 1.28;
+    letter-spacing: -.025em;
 
-    letter-spacing: -.04em;
-
+    margin-bottom: 18px;
 }
 
 
-.research-description p {
+.pub-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    color: #767676;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+
+.pub-bottom strong {
+    color: #b7b7b7;
+    font-weight: 500;
+}
+
+
+.pub-role {
+    white-space: nowrap;
+}
+
+
+.pub-arrow {
+    position: absolute;
+    right: 5px;
+    top: 50%;
 
     color: #777;
-
-    line-height: 1.6;
-
-    font-size: 14px;
-
-}
-
-
-.research-arrow {
-
     font-size: 20px;
 
-    color: #777;
+    transform: translateY(-50%);
+
+    transition: transform .25s ease, color .25s ease;
+}
+
+
+a.pub-entry:hover .pub-arrow {
+    color: #ddd;
+    transform: translate(4px, calc(-50% - 4px));
+}
+
+
+/* SELECTED WORK MOBILE */
+
+@media (max-width: 900px) {
+
+    .selected-work-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card {
+        min-height: 440px;
+    }
+
+    .work-card-content {
+        max-width: 92%;
+    }
+
+    .pub-year-group {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .pub-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .pub-role {
+        white-space: normal;
+    }
 
 }
 
+
+@media (max-width: 600px) {
+
+    .work-card {
+        min-height: 410px;
+        padding: 22px;
+    }
+
+    .work-card-top {
+        font-size: 9px;
+    }
+
+    .work-visual svg {
+        width: 110%;
+        right: -25%;
+        top: 11%;
+    }
+
+    .publications-block {
+        margin-top: 100px;
+    }
+
+    .publications-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .pub-entry {
+        padding-right: 38px;
+    }
+
+    .pub-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .pub-meta span + span::before {
+        content: "";
+        margin-right: 0;
+    }
+
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
 
 /* =========================
    EXPERIENCE
