@@ -234,15 +234,11 @@ nav {
 
 
 .hero-description {
-
     color: #b3b3b3;
-
     line-height: 1.65;
-
     font-size: 16px;
-
-    max-width: 430px;
-
+    max-width: none;
+    white-space: nowrap;
 }
 
 
@@ -890,7 +886,12 @@ footer a {
     letter-spacing: -0.06em;
     white-space: nowrap;
 }
-
+   
+   .hero-description {
+        white-space: normal;
+        max-width: 430px;
+    }
+   
     .hero-bottom {
 
         flex-direction: column;
