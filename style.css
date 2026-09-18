@@ -667,6 +667,17 @@ nav {
     border-color: #aaa;
 }
 
+.work-foot-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.work-foot-links .work-foot-link {
+    margin-top: 0;
+}
+
 /* Card animations */
 .card-ir svg path,
 .card-mals svg path,
