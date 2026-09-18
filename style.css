@@ -1605,3 +1605,61 @@ footer a {
 
 }
 
+/* =========================================
+   FROSTED SECTION PILLS — STRONG OVERRIDE
+========================================= */
+
+#about .section-heading,
+#research > .section-heading,
+#experience > .section-heading,
+#contact .contact-section-heading {
+    display: inline-flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+
+    gap: 14px !important;
+    padding: 10px 17px !important;
+
+    border: 1px solid rgba(255,255,255,.34) !important;
+    border-radius: 999px !important;
+
+    background: rgba(25,31,37,.34) !important;
+
+    -webkit-backdrop-filter: blur(16px) saturate(135%) !important;
+    backdrop-filter: blur(16px) saturate(135%) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 6px 22px rgba(0,0,0,.16) !important;
+}
+
+#about .section-heading .section-number,
+#research > .section-heading .section-number,
+#experience > .section-heading .section-number,
+#contact .contact-section-heading .section-number {
+    color: #939ba2 !important;
+    font-size: 13px !important;
+}
+
+#about .section-heading .section-label,
+#research > .section-heading .section-label,
+#experience > .section-heading .section-label,
+#contact .contact-section-heading .section-label {
+    color: #d4d8db !important;
+    font-size: 13px !important;
+    letter-spacing: 1.8px !important;
+}
+
+
+/* Also strengthen YV and Explore frosted treatment */
+.brand,
+.explore {
+    border: 1px solid rgba(255,255,255,.34) !important;
+    background: rgba(25,31,37,.34) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(135%) !important;
+    backdrop-filter: blur(16px) saturate(135%) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 6px 22px rgba(0,0,0,.16) !important;
+}
+
