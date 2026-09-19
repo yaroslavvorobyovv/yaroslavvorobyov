@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond — Yaroslav Vorobyov</title>
+    <meta name="description" content="Beyond medicine — photography, aviation, banya, and hands-on interests by Yaroslav Vorobyov.">
+    <link rel="stylesheet" href="style.css?v=20260919-9">
+    <style>
+        .beyond-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 7vw 90px;
+            background: linear-gradient(180deg, #0a0b0c 0%, #0b1116 52%, #09131c 100%);
+        }
+        .beyond-shell {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+        }
+        .beyond-kicker {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 10px 17px;
+            border: 1px solid rgba(255,255,255,.34);
+            border-radius: 999px;
+            background: rgba(25,31,37,.34);
+            -webkit-backdrop-filter: blur(16px) saturate(135%);
+            backdrop-filter: blur(16px) saturate(135%);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 6px 22px rgba(0,0,0,.18);
+            font-size: .78rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.72);
+            margin-bottom: 30px;
+        }
+        .beyond-shell h1 {
+            max-width: 900px;
+            font-size: clamp(3.4rem, 8vw, 7.7rem);
+            line-height: .94;
+            letter-spacing: -.055em;
+            margin: 0 0 24px;
+        }
+        .beyond-intro {
+            max-width: 720px;
+            font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+            line-height: 1.65;
+            color: rgba(255,255,255,.62);
+            margin: 0;
+        }
+        .beyond-preview {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 58px;
+        }
+        .beyond-preview div {
+            min-height: 145px;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 16px;
+            background: rgba(255,255,255,.025);
+            color: rgba(255,255,255,.82);
+            font-size: .86rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+        @media (max-width: 900px) {
+            .beyond-page { padding: 120px 22px 70px; }
+            .beyond-preview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 560px) {
+            .beyond-preview { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand">YV</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#research">Research</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="beyond.html" class="is-active" aria-current="page">Beyond</a>
+            <a href="cv.pdf" target="_blank" class="nav-cv">CV ↗</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#research">Research</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="beyond.html" class="is-active" aria-current="page">Beyond</a>
+            <a href="cv.pdf" target="_blank" class="mobile-menu-cv">CV ↗</a>
+        </div>
+    </aside>
+
+    <main class="beyond-page">
+        <div class="beyond-shell">
+            <div class="beyond-kicker">Beyond</div>
+            <h1>Beyond medicine.</h1>
+            <p class="beyond-intro">A space for the interests, projects, and experiences that shape how I see the world outside of medicine.</p>
+            <div class="beyond-preview" aria-label="Beyond page sections">
+                <div>Photography</div>
+                <div>Aviation</div>
+                <div>Banya</div>
+                <div>Mechanical</div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        (() => {
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.mobile-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            const links = document.querySelectorAll('.mobile-menu a');
+            if (!toggle || !menu || !backdrop) return;
+            const setOpen = (open) => {
+                document.body.classList.toggle('menu-open', open);
+                toggle.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+                menu.setAttribute('aria-hidden', String(!open));
+                backdrop.setAttribute('aria-hidden', String(!open));
+            };
+            toggle.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')));
+            backdrop.addEventListener('click', () => setOpen(false));
+            links.forEach(link => link.addEventListener('click', () => setOpen(false)));
+            document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setOpen(false); });
+            window.addEventListener('resize', () => { if (window.innerWidth > 900) setOpen(false); });
+        })();
+    </script>
+</body>
+</html>
