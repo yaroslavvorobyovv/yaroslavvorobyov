@@ -2360,3 +2360,16 @@ footer a {
         max-width: calc(100vw - 330px);
     }
 }
+
+
+@media (max-width: 900px) {
+    .heading-pill-row {
+        justify-content: flex-start !important;
+    }
+
+    .publications-heading,
+    .leadership-heading {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+}
