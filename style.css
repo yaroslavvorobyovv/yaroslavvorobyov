@@ -2305,3 +2305,27 @@ footer a {
     line-height: 1;
     vertical-align: baseline;
 }
+
+
+/* Mobile polish: keep external-link arrows at the far right of menu rows. */
+.mobile-menu-links .mobile-menu-cv .link-arrow {
+    margin-left: auto !important;
+    flex: 0 0 auto;
+}
+
+/* Experience locations/statuses should stay on one line and align consistently. */
+.experience-row > span {
+    white-space: nowrap;
+    text-align: right;
+    flex: 0 0 auto;
+}
+
+.experience-row > div {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .experience-row {
+        gap: 16px;
+    }
+}
