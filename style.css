@@ -2119,3 +2119,47 @@ footer a {
     border: 1px solid rgba(255,255,255,.12);
 }
 
+/* Professional memberships — centered clickable cards */
+#experience .membership-card-link {
+    position: relative !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+
+    color: inherit !important;
+    text-decoration: none !important;
+    text-align: center !important;
+
+    cursor: pointer;
+}
+
+#experience .membership-card-link .membership-acronym {
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+#experience .membership-card-link h3 {
+    margin: 0 !important;
+    max-width: 280px !important;
+    text-align: center !important;
+}
+
+#experience .membership-card-link::after {
+    content: "↗";
+    position: absolute;
+    top: 14px;
+    right: 16px;
+
+    color: rgba(255,255,255,.42);
+    font-size: 13px;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+#experience .membership-card-link:hover::after {
+    color: rgba(255,255,255,.9);
+    transform: translate(2px, -2px);
+}
+
