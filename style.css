@@ -2331,3 +2331,32 @@ footer a {
         gap: 16px;
     }
 }
+
+
+/* Hero responsive copy: wrap naturally before the Explore control is crowded. */
+.hero-bottom {
+    gap: 38px;
+}
+
+.hero-left {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.hero-description {
+    white-space: normal;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.explore {
+    flex: 0 0 auto;
+}
+
+/* On intermediate desktop widths, reserve space for Explore so the sentence
+   becomes two lines before the full mobile hero layout takes over. */
+@media (min-width: 801px) and (max-width: 1180px) {
+    .hero-description {
+        max-width: calc(100vw - 330px);
+    }
+}
