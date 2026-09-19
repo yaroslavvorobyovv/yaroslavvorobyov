@@ -2163,3 +2163,12 @@ footer a {
     transform: translate(2px, -2px);
 }
 
+/* Leadership & Involvement — tighter card height */
+#experience .activity-card .work-card-body {
+    min-height: 235px;
+}
+
+#experience .activity-card .work-card-body > p {
+    margin-bottom: 16px;
+}
+
