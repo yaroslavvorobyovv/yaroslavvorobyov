@@ -2059,8 +2059,9 @@ footer a {
 
     .mobile-menu {
         top: 80px;
-        right: 18px;
-        width: calc(100vw - 36px);
+        left: 10vw;
+        right: auto;
+        width: 80vw;
     }
 
 }
