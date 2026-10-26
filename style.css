@@ -2373,3 +2373,13 @@ footer a {
         margin-right: auto !important;
     }
 }
+
+
+/* Status line above card links (e.g. manuscript in submission) */
+.work-status {
+    display: block;
+    margin-bottom: 12px;
+    color: #8b949b;
+    font-size: 11px;
+    letter-spacing: .45px;
+}
