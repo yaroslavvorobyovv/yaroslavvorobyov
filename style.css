@@ -2383,3 +2383,9 @@ footer a {
     font-size: 11px;
     letter-spacing: .45px;
 }
+
+/* Fellowship director study card */
+.fd-trend { stroke: rgba(220,228,234,.55); stroke-width: 2; stroke-dasharray: 6 8; animation: irFlow 7s linear infinite; }
+.fd-dot { fill: rgba(225,234,240,.72); animation: fdBlink 3s ease-in-out infinite; }
+@keyframes fdBlink { 50% { opacity: .35; } }
+.fd-dot:nth-child(odd) { animation-delay: 1.2s; }
