@@ -52,7 +52,7 @@ a {
 
     z-index: -2;
 
-    background-image: url("hero.jpg");
+    background-image: url("hero-angio.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2389,3 +2389,12 @@ footer a {
 .fd-dot { fill: rgba(225,234,240,.72); animation: fdBlink 3s ease-in-out infinite; }
 @keyframes fdBlink { 50% { opacity: .35; } }
 .fd-dot:nth-child(odd) { animation-delay: 1.2s; }
+
+/* Background image credit */
+.image-credit {
+    margin-top: 18px;
+    color: #5d6770;
+    font-size: 10px;
+    line-height: 1.5;
+}
+.image-credit a { color: #7c868f; text-decoration: underline; text-underline-offset: 2px; }
