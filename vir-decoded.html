@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIR Decoded — Yaroslav Vorobyov</title>
+    <meta name="description" content="VIR Decoded: the WCVIS Texas education series introducing trainees to vascular and interventional radiology, launched by Yaroslav Vorobyov.">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#08090b">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Yaroslav Vorobyov">
+    <meta property="og:title" content="VIR Decoded — Yaroslav Vorobyov">
+    <meta property="og:description" content="The WCVIS Texas education series introducing trainees to vascular and interventional radiology.">
+    <meta property="og:url" content="https://yaroslavvorobyov.com/vir-decoded.html">
+    <meta property="og:image" content="https://yaroslavvorobyov.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Yaroslav Vorobyov, Medical Student, over a dark angiogram">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VIR Decoded — Yaroslav Vorobyov">
+    <meta name="twitter:description" content="The WCVIS Texas education series introducing trainees to vascular and interventional radiology.">
+    <meta name="twitter:image" content="https://yaroslavvorobyov.com/og-image.jpg">
+    <link rel="stylesheet" href="style.css?v=20261103-2">
+    <style>
+        .vd-page { min-height: 100vh; padding: 150px 7vw 90px; background: linear-gradient(180deg, #0a0b0c 0%, #0b1116 52%, #09131c 100%); }
+        .vd-shell { width: min(1120px, 100%); margin: 0 auto; }
+        .vd-kicker { display: inline-flex; width: fit-content; padding: 10px 17px; border: 1px solid rgba(255,255,255,.34); border-radius: 999px; background: rgba(25,31,37,.34); -webkit-backdrop-filter: blur(16px) saturate(135%); backdrop-filter: blur(16px) saturate(135%); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.72); margin-bottom: 30px; }
+        .vd-shell h1 { font-size: clamp(3.2rem, 8vw, 7.2rem); font-weight: 400; line-height: .94; letter-spacing: -.055em; margin: 0 0 24px; }
+        .vd-intro { max-width: 760px; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.65; color: rgba(255,255,255,.66); margin: 0; }
+        .vd-meta { margin-top: 26px; color: #8b949b; font-size: 13px; letter-spacing: .4px; }
+        .vd-meta a { color: #cfd4d8; }
+        .vd-list { margin-top: 70px; border-top: 1px solid rgba(255,255,255,.12); }
+        .vd-session { display: grid; grid-template-columns: 120px minmax(0,1fr) auto; gap: 34px; align-items: start; padding: 34px 0; border-bottom: 1px solid rgba(255,255,255,.12); color: inherit; text-decoration: none; }
+        a.vd-session { transition: padding-left .25s ease, background .25s ease; }
+        a.vd-session:hover { padding-left: 12px; background: rgba(255,255,255,.018); }
+        .vd-num { color: #7f8890; font-size: 12px; letter-spacing: 1.6px; padding-top: 8px; }
+        .vd-session h2 { font-size: clamp(22px, 2.2vw, 32px); font-weight: 300; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 12px; }
+        .vd-session p { color: #8f989f; font-size: 14px; line-height: 1.65; margin: 0; max-width: 760px; }
+        .vd-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+        .vd-tags span { padding: 5px 11px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: #b8bfc4; font-size: 11px; letter-spacing: .5px; }
+        .vd-arrow { color: #8b949b; font-size: 20px; padding-top: 6px; }
+        .vd-session.is-upcoming h2 { color: #8f989f; }
+        @media (max-width: 760px) {
+            .vd-page { padding: 120px 22px 70px; }
+            .vd-session { grid-template-columns: 1fr; gap: 10px; }
+            .vd-arrow { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand">YV</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#research">Research</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="beyond.html">Beyond</a>
+            <a href="cv.pdf" target="_blank" class="nav-cv">CV <span class="link-arrow" aria-hidden="true">↗︎</span></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#research">Research</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="beyond.html">Beyond</a>
+            <a href="cv.pdf" target="_blank" class="mobile-menu-cv">CV <span class="link-arrow" aria-hidden="true">↗︎</span></a>
+        </div>
+    </aside>
+
+    <main class="vd-page">
+        <div class="vd-shell">
+            <div class="vd-kicker">WCVIS Texas Education Series</div>
+            <h1>VIR Decoded.</h1>
+            <p class="vd-intro">An education series I launched with WCVIS Texas to make vascular and interventional radiology more accessible to trainees, from pre-meds to residents. Each session walks through how VIR actually works as a clinical specialty, with real cases, interactive questions, and a look inside the VIR suite.</p>
+            <p class="vd-meta">Created and presented by Yaroslav Vorobyov · <a href="index.html#experience">WCVIS Texas Education Chair</a></p>
+
+            <div class="vd-list">
+                <a class="vd-session" href="vir-decoded-session-1.pdf" target="_blank" rel="noopener noreferrer">
+                    <div class="vd-num">SESSION 01</div>
+                    <div>
+                        <h2>The IR Consult, Preprocedural Planning &amp; Life in the VIR Suite</h2>
+                        <p>VIR is not a room; it is a clinical workflow. This session follows a patient from referral to follow-up: evaluating a new consult, screening bleeding, anticoagulation and contrast risk, finding your way around the VIR suite, and reading a fluoroscopic image, built around a peripheral arterial disease case.</p>
+                        <div class="vd-tags"><span>The consult</span><span>Pre-procedure</span><span>VIR suite</span><span>Post-procedure</span></div>
+                    </div>
+                    <span class="vd-arrow link-arrow" aria-hidden="true">↗︎</span>
+                </a>
+                <div class="vd-session is-upcoming">
+                    <div class="vd-num">NEXT</div>
+                    <div>
+                        <h2>More sessions coming soon</h2>
+                        <p>New sessions will be added here as the series continues.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        (() => {
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.mobile-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            const links = document.querySelectorAll('.mobile-menu a');
+            if (!toggle || !menu || !backdrop) return;
+            const setOpen = (open) => {
+                document.body.classList.toggle('menu-open', open);
+                toggle.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+                menu.setAttribute('aria-hidden', String(!open));
+                backdrop.setAttribute('aria-hidden', String(!open));
+            };
+            toggle.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')));
+            backdrop.addEventListener('click', () => setOpen(false));
+            links.forEach(link => link.addEventListener('click', () => setOpen(false)));
+            document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setOpen(false); });
+            window.addEventListener('resize', () => { if (window.innerWidth > 900) setOpen(false); });
+        })();
+    </script>
+</body>
+</html>

@@ -2398,3 +2398,66 @@ footer a {
     line-height: 1.5;
 }
 .image-credit a { color: #7c868f; text-decoration: underline; text-underline-offset: 2px; }
+
+
+/* =========================================
+   RECENT UPDATES (hero)
+========================================= */
+.hero-recent {
+    list-style: none;
+    margin: 30px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 9px;
+}
+.hero-recent li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    color: #cfd4d8;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.hero-recent .hr-date {
+    flex: 0 0 64px;
+    color: #7f8890;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+.hero-recent em { font-style: italic; }
+@media (max-width: 800px) {
+    .hero-recent { margin-top: 24px; }
+    .hero-recent li { font-size: 13px; }
+}
+
+/* =========================================
+   CONTRAST FLOW — a faint pulse moving along the vessels
+========================================= */
+.background-flow {
+    position: absolute;
+    inset: 0;
+    background-image: url("hero-angio.jpg?v=2");
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: screen;
+    filter: brightness(1.9) contrast(1.15);
+    opacity: .55;
+    -webkit-mask-image: linear-gradient(105deg, transparent 0%, transparent 38%, #000 50%, transparent 62%, transparent 100%);
+            mask-image: linear-gradient(105deg, transparent 0%, transparent 38%, #000 50%, transparent 62%, transparent 100%);
+    -webkit-mask-size: 300% 100%;
+            mask-size: 300% 100%;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    animation: contrastFlow 9s cubic-bezier(.45,.05,.35,1) infinite;
+}
+@keyframes contrastFlow {
+    0%   { -webkit-mask-position: 0% 0;   mask-position: 0% 0;   opacity: 0; }
+    12%  { opacity: .55; }
+    70%  { opacity: .45; }
+    85%  { -webkit-mask-position: 100% 0; mask-position: 100% 0; opacity: 0; }
+    100% { -webkit-mask-position: 100% 0; mask-position: 100% 0; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .background-flow { display: none; }
+}
