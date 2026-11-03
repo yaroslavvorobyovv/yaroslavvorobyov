@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="Yaroslav Vorobyov · Medical Student">
     <meta name="twitter:description" content="Medical student at TCU Burnett School of Medicine pursuing interventional radiology: research, publications, and IR education.">
     <meta name="twitter:image" content="https://yaroslavvorobyov.com/og-image.jpg">
-    <link rel="stylesheet" href="style.css?v=20261103-2">
+    <link rel="stylesheet" href="style.css?v=20261103-3">
 </head>
 
 <body>
@@ -102,8 +102,8 @@
 </p>
 
 <ul class="hero-recent" aria-label="Recent updates">
-    <li><span class="hr-date">2026</span><span>Educational exhibit accepted to ISET 2027</span></li>
-    <li><span class="hr-date">2026</span><span>Launched VIR Decoded with WCVIS Texas</span></li>
+    <li><span class="hr-date">Oct 2026</span><span>Launched VIR Decoded with WCVIS Texas</span></li>
+    <li><span class="hr-date">Sep 2026</span><span>Educational exhibit accepted to ISET 2027</span></li>
     <li><span class="hr-date">Apr 2026</span><span>Co-first-author paper published in <em>JACS</em></span></li>
 </ul>
 
@@ -145,6 +145,12 @@
                                 <path d="M5.6 16.2c.6-1.6 1.9-2.4 3.4-2.4s2.8.8 3.4 2.4M14.5 10h3.5M14.5 13.5h3.5"/>
                             </svg>
                         </a>
+
+                        <button type="button" class="qr-open" aria-label="Show QR code" title="QR code" aria-haspopup="dialog" aria-controls="qr-dialog">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="#e6e6e6">
+                                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm1-9h2v2H6V6zm10 0h2v2h-2V6zM6 16h2v2H6v-2zm7-3h2v2h-2v-2zm2 2h2v2h-2v-2zm2-2h4v2h-2v2h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2zm2-2h2v4h-4v-2h2v-2z"/>
+                            </svg>
+                        </button>
 
                     </div>
 
@@ -914,6 +920,12 @@
                             </svg>
             </a>
 
+            <button type="button" class="qr-open" aria-label="Show QR code" title="QR code" aria-haspopup="dialog" aria-controls="qr-dialog">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm1-9h2v2H6V6zm10 0h2v2h-2V6zM6 16h2v2H6v-2zm7-3h2v2h-2v-2zm2 2h2v2h-2v-2zm2-2h4v2h-2v2h-2v-4zm-4 4h2v4h-2v-4zm4 2h2v2h-2v-2zm2-2h2v4h-4v-2h2v-2z"/>
+                            </svg>
+            </button>
+
             <a href="cv.pdf" target="_blank" class="contact-cv">
                 Curriculum Vitae <span class="link-arrow" aria-hidden="true">↗︎</span>
             </a>
@@ -1038,5 +1050,33 @@
         })();
     </script>
 
+
+    <div class="qr-backdrop" id="qr-dialog" role="dialog" aria-modal="true" aria-labelledby="qr-title" hidden>
+        <div class="qr-panel">
+            <button type="button" class="qr-close" aria-label="Close">×</button>
+            <p class="qr-title" id="qr-title">Scan to visit</p>
+            <img src="yaroslavvorobyov-qr.svg" alt="QR code linking to yaroslavvorobyov.com" class="qr-img" width="240" height="240">
+            <p class="qr-url">yaroslavvorobyov.com</p>
+            <div class="qr-downloads">
+                <a href="yaroslavvorobyov-qr.png" download>Download PNG</a>
+                <a href="yaroslavvorobyov-qr.svg" download>Download SVG</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            const dlg = document.getElementById('qr-dialog');
+            if (!dlg) return;
+            const panel = dlg.querySelector('.qr-panel');
+            let last = null;
+            const open = (e) => { last = e.currentTarget; dlg.hidden = false; requestAnimationFrame(() => dlg.classList.add('is-open')); dlg.querySelector('.qr-close').focus(); };
+            const close = () => { dlg.classList.remove('is-open'); setTimeout(() => { dlg.hidden = true; }, 200); if (last) last.focus(); };
+            document.querySelectorAll('.qr-open').forEach(b => b.addEventListener('click', open));
+            dlg.querySelector('.qr-close').addEventListener('click', close);
+            dlg.addEventListener('click', (e) => { if (!panel.contains(e.target)) close(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !dlg.hidden) close(); });
+        })();
+    </script>
 </body>
 </html>

@@ -2461,3 +2461,56 @@ footer a {
 @media (prefers-reduced-motion: reduce) {
     .background-flow { display: none; }
 }
+
+
+/* =========================================
+   QR CODE BUTTON + DIALOG
+========================================= */
+.qr-open {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0; border: 0; background: none; cursor: pointer;
+    color: inherit; opacity: .86;
+    transition: opacity .2s ease, transform .2s ease;
+}
+.qr-open:hover { opacity: 1; transform: translateY(-1px); }
+.hero-socials .qr-open { width: 25px; height: 25px; }
+.hero-socials .qr-open svg { width: 19px; height: 19px; display: block; }
+.contact-links .qr-open { width: 25px; height: 25px; color: #edf1f4; }
+.contact-links .qr-open svg { width: 19px; height: 19px; display: block; }
+
+.qr-backdrop {
+    position: fixed; inset: 0; z-index: 2000;
+    display: flex; align-items: center; justify-content: center;
+    padding: 22px;
+    background: rgba(0,0,0,.55);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    opacity: 0; transition: opacity .2s ease;
+}
+.qr-backdrop[hidden] { display: none; }
+.qr-backdrop.is-open { opacity: 1; }
+.qr-panel {
+    position: relative;
+    width: min(340px, 100%);
+    padding: 30px 28px 24px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 24px;
+    background: rgba(14,18,22,.92);
+    box-shadow: 0 24px 70px rgba(0,0,0,.45);
+    text-align: center;
+    transform: translateY(8px) scale(.98);
+    transition: transform .2s ease;
+}
+.qr-backdrop.is-open .qr-panel { transform: none; }
+.qr-close {
+    position: absolute; top: 12px; right: 14px;
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.03);
+    color: #d8dde1; font-size: 20px; line-height: 1; cursor: pointer;
+}
+.qr-close:hover { background: rgba(255,255,255,.09); }
+.qr-title { color: #c0c5c9; font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 18px; }
+.qr-img { width: 240px; height: 240px; max-width: 100%; border-radius: 14px; background: #fff; padding: 10px; display: block; margin: 0 auto; }
+.qr-url { margin-top: 14px; color: #8b949b; font-size: 13px; }
+.qr-downloads { display: flex; justify-content: center; gap: 18px; margin-top: 18px; }
+.qr-downloads a { color: #e6e9ec; font-size: 13px; text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,.3); }
+.qr-downloads a:hover { border-bottom-color: rgba(255,255,255,.8); }
