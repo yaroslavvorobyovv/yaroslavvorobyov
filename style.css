@@ -2523,3 +2523,36 @@ footer a {
     line-height: 1.45;
     letter-spacing: .2px;
 }
+
+/* =========================================
+   PUBLICATION GROUPS + CITE BUTTONS
+========================================= */
+.pub-year-group { grid-template-columns: 170px minmax(0,1fr); }
+.pub-year { font-size: 14px; line-height: 1.4; padding-top: 30px; }
+.pub-item { position: relative; border-bottom: 1px solid #2c2c2c; }
+.pub-item > .pub-entry { border-bottom: 0; }
+.pub-item .pub-meta { padding-right: 70px; }
+.cite-btn {
+    position: absolute; top: 24px; right: 0;
+    padding: 5px 12px;
+    border: 1px solid rgba(255,255,255,.2); border-radius: 999px;
+    background: rgba(255,255,255,.03);
+    color: #b8bfc4; font: 500 11px/1 Inter, sans-serif; letter-spacing: .6px;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.cite-btn:hover { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.45); color: #fff; }
+.cite-toast {
+    position: fixed; left: 50%; bottom: 28px; z-index: 2100;
+    transform: translate(-50%, 12px);
+    padding: 10px 16px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.2); background: rgba(14,18,22,.92);
+    color: #e6e9ec; font-size: 13px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+}
+.cite-toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+@media (max-width: 760px) {
+    .pub-year-group { grid-template-columns: 1fr; }
+    .pub-year { padding-top: 0; }
+}
