@@ -2514,3 +2514,12 @@ footer a {
 .qr-downloads { display: flex; justify-content: center; gap: 18px; margin-top: 18px; }
 .qr-downloads a { color: #e6e9ec; font-size: 13px; text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,.3); }
 .qr-downloads a:hover { border-bottom-color: rgba(255,255,255,.8); }
+
+/* Full organization name under an acronym card title */
+#experience .activity-card .work-card-body > p.org-full {
+    margin: -8px 0 16px;
+    color: #a3abb2;
+    font-size: 12px;
+    line-height: 1.45;
+    letter-spacing: .2px;
+}
