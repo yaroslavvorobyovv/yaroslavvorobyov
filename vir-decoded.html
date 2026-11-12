@@ -44,10 +44,22 @@
         .vd-tags span { padding: 5px 11px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: #b8bfc4; font-size: 11px; letter-spacing: .5px; }
         .vd-arrow { color: #8b949b; font-size: 20px; padding-top: 6px; }
         .vd-session.is-upcoming h2 { color: #8f989f; }
+        .vd-steps { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); margin: 26px 0 0; padding: 0; position: relative; }
+        .vd-steps::before { content: ""; position: absolute; top: 5px; left: 6px; right: 6px; height: 1px; background: rgba(160,190,215,.35); }
+        .vd-steps li { position: relative; padding: 22px 12px 0 0; }
+        .vd-steps li::before { content: ""; position: absolute; top: 0; left: 0; width: 11px; height: 11px; border-radius: 50%; background: #8fb4d3; box-shadow: 0 0 10px rgba(143,180,211,.35); }
+        .vd-step { display: block; color: #e6e9ec; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; margin-bottom: 6px; }
+        .vd-goal { display: block; color: #8f989f; font-size: 13px; line-height: 1.45; }
+        .vd-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+        .vd-links a { display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: rgba(25,31,37,.34); color: #eef1f3; font-size: 14px; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+        .vd-links a:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
         @media (max-width: 760px) {
             .vd-page { padding: 120px 22px 70px; }
             .vd-session { grid-template-columns: 1fr; gap: 10px; }
             .vd-arrow { display: none; }
+            .vd-steps { grid-template-columns: 1fr; gap: 16px; }
+            .vd-steps::before { top: 6px; bottom: 6px; left: 5px; right: auto; width: 1px; height: auto; }
+            .vd-steps li { padding: 0 0 0 26px; }
         }
     </style>
 </head>
@@ -87,15 +99,25 @@
             <p class="vd-meta">Created and presented by Yaroslav Vorobyov · <a href="index.html#experience">WCVIS Texas Education Chair</a></p>
 
             <div class="vd-list">
-                <a class="vd-session" data-goatcounter-click="vir-decoded-session-1" href="vir-decoded-session-1.pdf" target="_blank" rel="noopener noreferrer">
+                <article class="vd-session">
                     <div class="vd-num">SESSION 01</div>
                     <div>
                         <h2>The IR Consult, Preprocedural Planning &amp; Life in the VIR Suite</h2>
-                        <p>VIR is not a room; it is a clinical workflow. This session follows a patient from referral to follow-up: evaluating a new consult, screening bleeding, anticoagulation and contrast risk, finding your way around the VIR suite, and reading a fluoroscopic image, built around a peripheral arterial disease case.</p>
-                        <div class="vd-tags"><span>The consult</span><span>Pre-procedure</span><span>VIR suite</span><span>Post-procedure</span></div>
+                        <p>VIR is not a room; it is a clinical workflow. This session follows a patient from referral to follow-up, built around a peripheral arterial disease case.</p>
+                        <ol class="vd-steps" aria-label="Session topics">
+                            <li><span class="vd-step">Consult</span><span class="vd-goal">Evaluate a new consult</span></li>
+                            <li><span class="vd-step">Preprocedure</span><span class="vd-goal">Screen for risk</span></li>
+                            <li><span class="vd-step">VIR Suite</span><span class="vd-goal">Explain the imaging environment</span></li>
+                            <li><span class="vd-step">Procedure</span><span class="vd-goal">Approach a fluoroscopic image</span></li>
+                            <li><span class="vd-step">Postprocedure</span><span class="vd-goal">Recognize warning signs</span></li>
+                        </ol>
+                        <div class="vd-links">
+                            <a href="https://youtu.be/DmHDDJg4fxM" target="_blank" rel="noopener noreferrer" data-goatcounter-click="vir-decoded-session-1-video"><span aria-hidden="true">▶</span> Watch recording</a>
+                            <a href="vir-decoded-session-1.pdf" target="_blank" rel="noopener noreferrer" data-goatcounter-click="vir-decoded-session-1">Slides <span class="link-arrow" aria-hidden="true">↗︎</span></a>
+                        </div>
                     </div>
-                    <span class="vd-arrow link-arrow" aria-hidden="true">↗︎</span>
-                </a>
+                </article>
+
                 <div class="vd-session is-upcoming">
                     <div class="vd-num">NEXT</div>
                     <div>
