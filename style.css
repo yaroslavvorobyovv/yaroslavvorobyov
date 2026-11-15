@@ -2649,3 +2649,11 @@ a.vd-session:hover { padding-left: 12px; background: rgba(255,255,255,.018); }
     .vd-session { grid-template-columns: 1fr; }
     .vd-flyer { max-width: 240px; }
 }
+
+/* VIR Decoded: upcoming badge, part labels */
+.vd-badge { display: inline-block; margin-bottom: 12px; padding: 4px 10px; border: 1px solid rgba(232,160,110,.5); border-radius: 999px; color: #e8a06e; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; }
+.vd-part { margin-top: 26px !important; color: #a3abb2 !important; font-size: 11px !important; letter-spacing: 1.6px; text-transform: uppercase; }
+.vd-part + .vd-steps { margin-top: 14px; }
+.vd-after { margin-top: 24px !important; font-size: 13px !important; color: #7f8890 !important; }
+.vd-steps-short::before { right: calc(80% - 6px); }
+@media (max-width: 760px) { .vd-steps-short::before { right: auto; } }
