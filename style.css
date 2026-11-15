@@ -2638,3 +2638,14 @@ a.vd-session:hover { padding-left: 12px; background: rgba(255,255,255,.018); }
 .vd-section .vd-shell { width: 100%; margin: 0; }
 .beyond-title { max-width: 6.2em; }
 .hero-recent .hr-date { flex: 0 0 74px; white-space: nowrap; }
+
+/* VIR Decoded: session date + flyer under the session label */
+.vd-session { grid-template-columns: 210px minmax(0,1fr) auto; }
+.vd-date { display: block; margin-top: 10px; color: #a3abb2; font-size: 12px; letter-spacing: .3px; line-height: 1.5; }
+.vd-flyer { display: block; margin-top: 16px; width: 100%; max-width: 190px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,.14); transition: transform .25s ease, border-color .25s ease; }
+.vd-flyer img { display: block; width: 100%; height: auto; }
+.vd-flyer:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.35); }
+@media (max-width: 760px) {
+    .vd-session { grid-template-columns: 1fr; }
+    .vd-flyer { max-width: 240px; }
+}
