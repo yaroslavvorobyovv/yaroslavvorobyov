@@ -2657,3 +2657,6 @@ a.vd-session:hover { padding-left: 12px; background: rgba(255,255,255,.018); }
 .vd-after { margin-top: 24px !important; font-size: 13px !important; color: #7f8890 !important; }
 .vd-steps-short::before { right: calc(80% - 6px); }
 @media (max-width: 760px) { .vd-steps-short::before { right: auto; } }
+/* Step labels only: keep long labels from colliding */
+.vd-steps li { min-width: 0; padding-right: 8px; }
+.vd-step { margin-bottom: 0; letter-spacing: 1px; overflow-wrap: anywhere; }
