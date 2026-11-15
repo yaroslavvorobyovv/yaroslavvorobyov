@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation — Yaroslav Vorobyov</title>
+    <meta name="description" content="Aviation: part of Beyond, the interests of Yaroslav Vorobyov outside of medicine.">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#08090b">
+    <link rel="stylesheet" href="style.css?v=20261115-1">
+    <style>
+        .bx-page { min-height: 100vh; display: flex; align-items: center; padding: 150px 7vw 90px; background: linear-gradient(180deg, #0a0b0c 0%, #0b1116 52%, #09131c 100%); }
+        .bx-shell { width: min(1120px, 100%); margin: 0 auto; }
+        .bx-back { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 10px 17px; border: 1px solid rgba(255,255,255,.34); border-radius: 999px; background: rgba(25,31,37,.34); color: rgba(255,255,255,.78); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; margin-bottom: 30px; }
+        .bx-back:hover { background: rgba(255,255,255,.08); }
+        .bx-shell h1 { font-size: clamp(3.4rem, 8vw, 7.7rem); font-weight: 600; line-height: .94; letter-spacing: -.055em; margin: 0 0 24px; }
+        .bx-intro { max-width: 720px; font-size: clamp(1.05rem, 1.6vw, 1.35rem); line-height: 1.65; color: rgba(255,255,255,.62); margin: 0; }
+        .bx-soon { margin-top: 48px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+        .bx-soon div { min-height: 180px; border: 1px dashed rgba(255,255,255,.14); border-radius: 16px; background: rgba(255,255,255,.015); }
+        .bx-note { margin-top: 18px; color: #7f8890; font-size: 13px; letter-spacing: .4px; }
+        @media (max-width: 900px) { .bx-page { padding: 120px 22px 70px; } .bx-soon { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 560px) { .bx-soon { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand">YV</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#research">Research</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#vir-decoded">VIR Decoded</a>
+            <a href="index.html#beyond" class="is-active" aria-current="page">Beyond</a>
+            <a href="index.html#contact">Contact</a>
+            <a data-goatcounter-click="cv-download" href="cv.pdf" target="_blank" class="nav-cv">CV <span class="link-arrow" aria-hidden="true">↗︎</span></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu-backdrop" aria-hidden="true"></div>
+    <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#research">Research</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#vir-decoded">VIR Decoded</a>
+            <a href="index.html#beyond" class="is-active" aria-current="page">Beyond</a>
+            <a href="index.html#contact">Contact</a>
+            <a data-goatcounter-click="cv-download" href="cv.pdf" target="_blank" class="mobile-menu-cv">CV <span class="link-arrow" aria-hidden="true">↗︎</span></a>
+        </div>
+    </aside>
+
+        <main class="bx-page">
+        <div class="bx-shell">
+            <a class="bx-back" href="index.html#beyond"><span aria-hidden="true">←</span> Beyond</a>
+            <h1>Aviation.</h1>
+            <p class="bx-intro">Flying, aircraft, and my interest in aviation.</p>
+            <div class="bx-soon" aria-hidden="true"><div></div><div></div><div></div></div>
+            <p class="bx-note">Coming soon.</p>
+        </div>
+    </main>
+
+    <script>
+        (() => {
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('.mobile-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            const links = document.querySelectorAll('.mobile-menu a');
+            if (!toggle || !menu || !backdrop) return;
+            const setOpen = (open) => {
+                document.body.classList.toggle('menu-open', open);
+                toggle.classList.toggle('is-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+                menu.setAttribute('aria-hidden', String(!open));
+                backdrop.setAttribute('aria-hidden', String(!open));
+            };
+            toggle.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')));
+            backdrop.addEventListener('click', () => setOpen(false));
+            links.forEach(link => link.addEventListener('click', () => setOpen(false)));
+            document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setOpen(false); });
+            window.addEventListener('resize', () => { if (window.innerWidth > 900) setOpen(false); });
+        })();
+    </script>
+    <script data-goatcounter="https://yaroslavvorobyov.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

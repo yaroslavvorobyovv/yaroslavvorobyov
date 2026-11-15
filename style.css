@@ -2556,3 +2556,85 @@ footer a {
     .pub-year-group { grid-template-columns: 1fr; }
     .pub-year { padding-top: 0; }
 }
+
+
+/* =========================================
+   VIR DECODED SECTION
+========================================= */
+.vd-kicker-text { color: #8b949b; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; }
+.vd-title { font-size: clamp(3.2rem, 8vw, 7.2rem); font-weight: 400; line-height: .94; letter-spacing: -.055em; margin: 0 0 24px; }
+
+.vd-shell { width: min(1120px, 100%); margin: 0 auto; }
+.vd-intro { max-width: 760px; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.65; color: rgba(255,255,255,.66); margin: 0; }
+.vd-meta { margin-top: 26px; color: #8b949b; font-size: 13px; letter-spacing: .4px; }
+.vd-meta a { color: #cfd4d8; }
+.vd-list { margin-top: 70px; border-top: 1px solid rgba(255,255,255,.12); }
+.vd-session { display: grid; grid-template-columns: 120px minmax(0,1fr) auto; gap: 34px; align-items: start; padding: 34px 0; border-bottom: 1px solid rgba(255,255,255,.12); color: inherit; text-decoration: none; }
+a.vd-session { transition: padding-left .25s ease, background .25s ease; }
+a.vd-session:hover { padding-left: 12px; background: rgba(255,255,255,.018); }
+.vd-num { color: #7f8890; font-size: 12px; letter-spacing: 1.6px; padding-top: 8px; }
+.vd-session h3 { font-size: clamp(22px, 2.2vw, 32px); font-weight: 300; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 12px; }
+.vd-session p { color: #8f989f; font-size: 14px; line-height: 1.65; margin: 0; max-width: 760px; }
+.vd-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.vd-tags span { padding: 5px 11px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; color: #b8bfc4; font-size: 11px; letter-spacing: .5px; }
+.vd-arrow { color: #8b949b; font-size: 20px; padding-top: 6px; }
+.vd-session.is-upcoming h3 { color: #8f989f; }
+.vd-steps { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); margin: 26px 0 0; padding: 0; position: relative; }
+.vd-steps::before { content: ""; position: absolute; top: 5px; left: 6px; right: 6px; height: 1px; background: rgba(160,190,215,.35); }
+.vd-steps li { position: relative; padding: 22px 12px 0 0; }
+.vd-steps li::before { content: ""; position: absolute; top: 0; left: 0; width: 11px; height: 11px; border-radius: 50%; background: #8fb4d3; box-shadow: 0 0 10px rgba(143,180,211,.35); }
+.vd-step { display: block; color: #e6e9ec; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; margin-bottom: 6px; }
+.vd-goal { display: block; color: #8f989f; font-size: 13px; line-height: 1.45; }
+.vd-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.vd-links a { display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: rgba(25,31,37,.34); color: #eef1f3; font-size: 14px; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+.vd-links a:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+@media (max-width: 760px) {
+    .vd-session { grid-template-columns: 1fr; gap: 10px; }
+    .vd-arrow { display: none; }
+    .vd-steps { grid-template-columns: 1fr; gap: 16px; }
+    .vd-steps::before { top: 6px; bottom: 6px; left: 5px; right: auto; width: 1px; height: auto; }
+    .vd-steps li { padding: 0 0 0 26px; }
+}
+    
+
+/* =========================================
+   BEYOND SECTION
+========================================= */
+.beyond-shell { width: 100%; }
+.beyond-title { max-width: 900px; font-size: clamp(3.4rem, 8vw, 7.7rem); font-weight: 600; line-height: .94; letter-spacing: -.055em; margin: 0 0 24px; }
+.beyond-intro { max-width: 720px; font-size: clamp(1.05rem, 1.6vw, 1.35rem); line-height: 1.65; color: rgba(255,255,255,.62); margin: 0; }
+.beyond-preview { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 58px; }
+.beyond-preview a {
+    position: relative; min-height: 145px; display: flex; align-items: flex-end; padding: 20px;
+    border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(255,255,255,.025);
+    color: rgba(255,255,255,.82); font-size: .86rem; letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.beyond-preview a .link-arrow { position: absolute; top: 16px; right: 18px; color: rgba(255,255,255,.4); letter-spacing: 0; transition: color .2s ease, transform .2s ease; }
+.beyond-preview a:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.045); }
+.beyond-preview a:hover .link-arrow { color: rgba(255,255,255,.9); transform: translate(2px,-2px); }
+@media (max-width: 900px) { .beyond-preview { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .beyond-preview { grid-template-columns: 1fr; } }
+
+/* Section pills for the two new sections */
+#vir-decoded > .section-heading,
+#beyond > .section-heading {
+    display: inline-flex !important; align-items: center !important; width: fit-content !important;
+    gap: 14px !important; padding: 10px 17px !important;
+    border: 1px solid rgba(255,255,255,.34) !important; border-radius: 999px !important;
+    background: rgba(25,31,37,.34) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(135%) !important; backdrop-filter: blur(16px) saturate(135%) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 6px 22px rgba(0,0,0,.16) !important;
+}
+#vir-decoded > .section-heading .section-number,
+#beyond > .section-heading .section-number { color: #939ba2 !important; font-size: 13px !important; }
+#vir-decoded > .section-heading .section-label,
+#beyond > .section-heading .section-label { color: #d4d8db !important; font-size: 13px !important; letter-spacing: 1.8px !important; }
+
+/* Seven nav buttons: tighten spacing on mid-size screens */
+@media (max-width: 1200px) { .nav-links { gap: 12px; } .nav-links a { padding: 8px 13px; font-size: 14px; } }
+
+/* Section alignment + small fixes */
+.vd-section .vd-shell { width: 100%; margin: 0; }
+.beyond-title { max-width: 6.2em; }
+.hero-recent .hr-date { flex: 0 0 74px; white-space: nowrap; }
